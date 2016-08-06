@@ -1,6 +1,9 @@
 var currDiv = "main-menu"; // init to menu
 var prevDiv = "main-menu"; // init to menu
 
+
+$(".button-collapse").sideNav();
+
 // PAGE NAVIGATION
 
 function changeView(sourceId, destId) {
@@ -19,19 +22,6 @@ $(window).on("navigate", function (event, data) {
   if (direction == 'forward') {
     // do something else
   }
-});
-
-// slideout panel
-var slideout = new Slideout({
-  'panel': document.getElementById('panel'),
-  'menu': document.getElementById('menu'),
-  'padding': 256,
-  'tolerance': 70
-});
-
-// Toggle button
-document.querySelector('.toggle-button').addEventListener('click', function() {
-  slideout.toggle();
 });
 
 function addOrder() {
