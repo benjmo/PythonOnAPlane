@@ -28,7 +28,7 @@ customers = [
 @app.route('/')
 @app.route('/index')
 def boilerplate():
-    return render_template('index.html')
+    return render_template('passenger.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
