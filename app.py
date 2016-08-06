@@ -1,29 +1,6 @@
 from flask import Flask, request, render_template, jsonify, redirect, url_for
+from values import customers, services, products
 app = Flask(__name__)
-
-services = [
-    {
-        'product-id': 1234,
-		'customer-id': 0
-    },
-    {
-        'product-id': 5827,
-		'customer-id': 1
-    }
-]
-
-customers = [
-	{
-		'name' : 'Peter',
-		'row_number': 32,
-		'seat_letter' : 'f'
-	},
-	{
-		'name' : 'Bob',
-		'row_number': 43,
-		'seat_letter' : 'b'
-	}
-]
 
 @app.route('/')
 @app.route('/index')
@@ -38,6 +15,10 @@ def page_not_found(e):
 def get_services():
     return jsonify({'services': services})
 
+@app.route('/get_products', methods=['GET'])
+def get_products():
+    return jsonify({'products': products})
+
 @app.route('/get_customer', methods=['GET'])
 def get_customer():
     if 'customer-id' in request.args:
@@ -48,6 +29,19 @@ def get_customer():
             return jsonify({'error' : 'customer id not exist'})
     else:
         return jsonify({'error' : 'please give in integer variable customer-id'})
+
+@app.route('/get_product_by_id', methods=['GET'])
+def get_product_by_id():
+    if 'product-id' in request.args:
+        p_id = request.args.get('product-id')
+        try:
+            return jsonify({'product': products[int(p_id)]})
+        except IndexError:
+            return jsonify({'error' : 'product id not exist'})
+    else:
+        return jsonify({'error' : 'please give in integer variable product-id'})
+
+@app.route('/add_order', methods=['GET'])
 
 @app.route('/add_order', methods=['GET'])
 def add_order():
