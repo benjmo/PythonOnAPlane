@@ -21,14 +21,50 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div>
-    <h1><center>QHopper</center></h1>
+    <div id="mainpage">
+      <h1><center>QHopper</center></h1>
 
-    <div id="content">
-      <a class="form-control">Drinks</a>
-      <a class="form-control">Snacks</a>
-      <a class="form-control">Services</a>
+      <div id="content">
+        <a class="form-control">Drinks</a>
+        <a class="form-control">Snacks</a>
+        <a class="form-control">Services</a>
+      </div>
     </div>
+
+    <div hidden id="drinks">
+      <h1><center>Drink Menu</center></h1>
+
+      <h3>Soft Drink</h3>
+        Coke <button type="button">Request</button><br>
+        Sprite <button type="button">Request</button><br>
+        Fanta <button type="button">Request</button><br>
+      <h3>Juice</h3>
+        Apple Juice <button type="button">Request</button><br>
+        Orange Juice <button type="button">Request</button><br>
+      <h3>Tea and Coffee</h3>
+        English Breakfast <button type="button">Request</button><br>
+        Green Tea <button type="button">Request</button><br>
+        Coffee <button type="button">Request</button><br>
+      <h3>Alcoholic Beverages</h3>
+        Red Wine <button type="button">Request</button><br>
+        White Wine <button type="button">Request</button><br>
+        Beer <button type="button">Request</button><br>
+        
+    </div>
+    
+    <div header id="snacks">
+      <h1><center>Snack Menu</center></h1>
+      Peanuts <button type="button">Request</button><br>
+      Chips <button type="button">Request</button><br>
+      
+    </div>
+    
+    <div hidden id="services">
+      <h1><center>Other Services</center></h1>
+      Blanket <button type="button">Request</button><br>
+      Pillow <button type="button">Request</button><br>
+      Headphones <button type="button">Request</button><br>
+      
     </div>
     
     <script src="{{url_for('static', filename='https://code.jquery.com/jquery-1.12.0.min.js')}}"></script>
