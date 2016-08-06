@@ -35,7 +35,10 @@ def get_orders():
         ret.append({'customer_name' : customers[c_id]['name'],
                     'row_number' : customers[c_id]['row_number'],
                     'seat_letter' : customers[c_id]['seat_letter'],
-                    'product_name' : p_name
+                    'product_name' : p_name,
+                    'product_id' : p_id,
+                    'customer_id' : c_id,
+                    'product_type' : p_type,
         })
     return jsonify(ret)
 
@@ -119,8 +122,8 @@ def add_order():
 @app.route('/remove_order', methods=['GET'])
 def remove_order():
     if 'product-id' in request.args and 'customer-id' in request.args and 'product-type' in request.args:
-        p_id = request.args.get('product-id')
-        u_id = request.args.get('customer-id')
+        p_id = int(request.args.get('product-id'))
+        u_id = int(request.args.get('customer-id'))
         p_type = request.args.get('product-type')
         index = -1
         for order in services:
@@ -128,9 +131,9 @@ def remove_order():
                 index = services.index(order)
                 break
         if index != -1:
-            print services, index
-            print services.pop(index)
-            print services, index
+            print(services)
+            print(services.pop(index))
+            print(index)
             return jsonify({'response': 'order removed'})
         else:
             return jsonify({'response' : 'FAILURE order not removed'})
