@@ -78,7 +78,7 @@ drinks = [
         'name' : 'White Wine',
         'description' : 'Hunter Valley Pinot Gris.',
         'category' : 'Alcoholic Beverages',
-        'img_name' : 'coke.jpg'
+        'img_name' : 'white_wine.jpg'
     },
     {
         'name' : 'Beer',
@@ -111,11 +111,11 @@ other = [
     {
         'name' : 'Blanket',
         'description' : 'Warm Blanket.',
-        'category' : 'Other'
+        'category' : 'Amenities'
     },
     {
         'name' : 'Headphones',
         'description' : 'For your music.',
-        'category' : 'Other'
+        'category' : 'Amenities'
     }
 ]
