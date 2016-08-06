@@ -1,10 +1,10 @@
 services = [
     {
-        'product-id': 1234,
+        'product-id': 1,
 		'customer-id': 0
     },
     {
-        'product-id': 5827,
+        'product-id': 3,
 		'customer-id': 1
     }
 ]
