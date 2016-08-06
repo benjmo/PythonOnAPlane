@@ -15,9 +15,29 @@ def crew_view():
 def page_not_found(e):
     return render_template('404.html'), 404
 
+#product name
+#customer name
+#row number
+#seat 
 @app.route('/get_services', methods=['GET'])
 def get_services():
-    return jsonify({'services': services})
+    ret = []
+    for order in services:
+        p_id = order['product_id']
+        p_type = order['product_type']
+        c_id = order['customer_id']
+        if p_type == 'drinks':
+            p_name = drinks[p_id]
+        elif p_type == 'snacks':
+            p_name = snacks[p_id]
+        elif p_type == 'other':
+            p_name = other[p_id]
+        ret.append({'customer_name' : customers[c_id]['name'],
+                    'row_number' : customers[c_id]['row_number'],
+                    'seat_letter' : customers[c_id]['seat_letter'],
+                    'product_name' : p_type
+        })
+    return jsonify(ret)
 
 @app.route('/get_products', methods=['GET'])
 def get_products():
