@@ -47,6 +47,23 @@ def get_product_by_id():
     else:
         return jsonify({'error' : 'please give in integer variable product-id'})
 
+# params: row-number, seat-letter, customer-id
+@app.route('/update_seat', methods=['GET'])
+def update_seat():
+    if 'row-number' in request.args and 'seat-letter' in request.args and 'customer-id' in request.args:
+        row = request.args.get('row-number')
+        seat = request.args.get('seat-letter')
+        c_id = request.args.get('customer-id')
+        try:
+            customers[int(c_id)]['row_number'] = int(row)
+            customers[int(c_id)]['seat_letter'] = seat
+            return jsonify({'return': 'success'})
+        except IndexError:
+            return jsonify({'error' : 'customer id not exist'})
+    else:
+        return jsonify({'error' : 'please give valid row-number, seat-letter, '
+                        + 'customer-id'})
+
 # params: product-id, customer-id
 @app.route('/add_order', methods=['GET'])
 def add_order():
