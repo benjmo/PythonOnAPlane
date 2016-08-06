@@ -2,20 +2,19 @@
 {% extends "base.html" %}
 {% block head %}
 <!-- add header extensions here -->
-<link rel="stylesheet" href="{{url_for('static', filename='css/passenger.css')}}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!-- Compiled and minified CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/passenger.css')}}">
 <script>baseStaticURL = "{{url_for('static', filename="img/")}}"</script>
-
 {% endblock %}
 
 {% block body %}
 <nav>
   <div class="nav-wrapper">
-    <a href="#!" class="brand-logo">QHopper</a>
+    <a href="#!" onclick="changeView('main-menu')" class="brand-logo qantas-heading">QHopper</a>
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
       <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
@@ -37,17 +36,17 @@
 <div id="content" class="col-xs-12">
 
     <div id="item" class="col-xs-12 card" onclick="changeView('drinks')">
-    <i class="glyphicon glyphicon-glass"></i>
+    <i class="glyphicon glyphicon-glass" style="color:#EE0000"></i>
       Drink Menu
     </div>
 
     <div id="item" class="col-xs-12 card" onclick="changeView('snacks')">
-    <i class="glyphicon glyphicon-apple"></i>
+    <i class="glyphicon glyphicon-apple" style="color:#EE0000"></i>
       Snack Menu
     </div>
 
     <div id="item" class="col-xs-12 card" onclick="changeView('other')">
-<i class="glyphicon glyphicon-user"></i>
+    <i class="glyphicon glyphicon-user" style="color:#EE0000"></i>
       Other Services
     </div>
 

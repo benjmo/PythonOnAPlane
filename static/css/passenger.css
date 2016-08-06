@@ -2,6 +2,10 @@ body {
     background-color: white;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: BrauerNeue;
+}
+
 h1 {
     color: #EB131A;
 }
@@ -9,6 +13,14 @@ h1 {
 h3 {
   /*background-color: #f5f5f5;*/
   padding: 10px;
+}
+
+.qantas-heading {
+    font-family: BrauerNeue;
+}
+
+.qantas-body {
+    font-family AkkuratPro;
 }
 
 .card {
@@ -47,3 +59,16 @@ h3 {
     background-color: #f5f5f5;
 }
 
+.nav-wrapper {
+    background-color: #EE0000;
+}
+
+.side-nav {
+    background-color: #323232;
+}
+
+.side-nav a {
+    color: #FFFFFF;
+    font-family: AkkuratPro;
+    font-size: 18px;
+}

@@ -18,6 +18,31 @@ customers = [
 		'seat_letter' : 'f'
 	},
 	{
+		'name' : 'Rachel',
+		'row_number': 22,
+		'seat_letter' : 'd'
+	},
+	{
+		'name' : 'Lily',
+		'row_number': 33,
+		'seat_letter' : 'e'
+	},
+	{
+		'name' : 'John',
+		'row_number': 8,
+		'seat_letter' : 'a'
+	},
+	{
+		'name' : 'Tony',
+		'row_number': 77,
+		'seat_letter' : 'c'
+	},
+	{
+		'name' : 'Jill',
+		'row_number': 41,
+		'seat_letter' : 'b'
+	},
+	{
 		'name' : 'Bob',
 		'row_number': 43,
 		'seat_letter' : 'b'
