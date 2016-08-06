@@ -3,61 +3,75 @@
 {% block head %}
 <!-- add header extensions here -->
 <link rel="stylesheet" href="{{url_for('static', filename='css/passenger.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/slideout-menu.css')}}">
 {% endblock %}
 
 {% block body %}
+<nav id="menu" class="menu slideout-menu">
+  <header>
+    <h2>Menu</h2>
+  </header>
+</nav>
 
-<div id="main-menu">
-  <h1><center>QHopper</center></h1>
+<main id="panel" class="panel slideout-panel">
+  <header>
+    <span>
+      <button id="hamburger-button" class="toggle-button">☰</button>
+      <h2>Panel</h2>
+    </span>
+  </header>
 
-  <div id="content">
-  
-    <div id="item" class="card" onclick="changeView('main-menu', 'drinks')">
-      Drink Menu<br>
-    </div><br>
-    <div id="item" class="card" onclick="changeView('main-menu', 'snacks')"">
-      Snack Menu<br>
-    </div><br>
-    <div id="item" class="card" onclick="changeView('main-menu', 'services')"">
-      Other Services<br>
+  <div id="main-menu">
+    <h1><center>QHopper</center></h1>
+
+    <div id="content">
+    
+      <div id="item" class="card" onclick="changeView('main-menu', 'drinks')">
+        Drink Menu<br>
+      </div><br>
+      <div id="item" class="card" onclick="changeView('main-menu', 'snacks')">
+        Snack Menu<br>
+      </div><br>
+      <div id="item" class="card" onclick="changeView('main-menu', 'services')">
+        Other Services<br>
+      </div>
     </div>
+  </div>
+
+  <div hidden id="drinks">
+    <h1><center>Drink Menu</center></h1>
+
+    <h3>Soft Drink</h3>
+      Coke <button type="button">Request</button><br>
+      Sprite <button type="button">Request</button><br>
+      Fanta <button type="button">Request</button><br>
+    <h3>Juice</h3>
+      Apple Juice <button type="button">Request</button><br>
+      Orange Juice <button type="button">Request</button><br>
+    <h3>Tea and Coffee</h3>
+      English Breakfast <button type="button">Request</button><br>
+      Green Tea <button type="button">Request</button><br>
+      Coffee <button type="button">Request</button><br>
+    <h3>Alcoholic Beverages</h3>
+      Red Wine <button type="button">Request</button><br>
+      White Wine <button type="button">Request</button><br>
+      Beer <button type="button">Request</button><br>
+      
+  </div>
+
+  <div hidden id="snacks">
+    <h1><center>Snack Menu</center></h1>
+    Peanuts <button type="button">Request</button><br>
+    Chips <button type="button">Request</button><br>
     
   </div>
-</div>
 
-<div hidden id="drinks">
-  <h1><center>Drink Menu</center></h1>
-
-  <h3>Soft Drink</h3>
-    Coke <button type="button">Request</button><br>
-    Sprite <button type="button">Request</button><br>
-    Fanta <button type="button">Request</button><br>
-  <h3>Juice</h3>
-    Apple Juice <button type="button">Request</button><br>
-    Orange Juice <button type="button">Request</button><br>
-  <h3>Tea and Coffee</h3>
-    English Breakfast <button type="button">Request</button><br>
-    Green Tea <button type="button">Request</button><br>
-    Coffee <button type="button">Request</button><br>
-  <h3>Alcoholic Beverages</h3>
-    Red Wine <button type="button">Request</button><br>
-    White Wine <button type="button">Request</button><br>
-    Beer <button type="button">Request</button><br>
+  <div hidden id="services">
+    <h1><center>Other Services</center></h1>
+    Blanket <button type="button">Request</button><br>
+    Pillow <button type="button">Request</button><br>
+    Headphones <button type="button">Request</button><br>
     
-</div>
-
-<div hidden id="snacks">
-  <h1><center>Snack Menu</center></h1>
-  Peanuts <button type="button">Request</button><br>
-  Chips <button type="button">Request</button><br>
-  
-</div>
-
-<div hidden id="services">
-  <h1><center>Other Services</center></h1>
-  Blanket <button type="button">Request</button><br>
-  Pillow <button type="button">Request</button><br>
-  Headphones <button type="button">Request</button><br>
-  
-</div>
+  </div>
+</main>
 {% endblock %}
