@@ -6,12 +6,15 @@ $(".button-collapse").sideNav();
 
 // PAGE NAVIGATION
 
-function changeView(sourceId, destId) {
-   $("#" + sourceId).slideUp();
-   prevDiv = sourceId;
-   $("#" + destId).show();
-   currDiv = destId;
-   console.log("Changed from " + sourceId + " to " + destId);
+function changeView(destId) {
+   if (currDiv != destId) {
+      $("#" + currDiv).slideUp();
+      prevDiv = currDiv;
+      $("#" + destId).show();
+      currDiv = destId;
+   }
+   $('.button-collapse').sideNav('hide');
+   console.log("Changed from " + currDiv + " to " + destId);
 }
 
 $(window).on("navigate", function (event, data) {
