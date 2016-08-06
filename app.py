@@ -34,10 +34,6 @@ def boilerplate():
 def crew_view():
     return render_template('crew.html')
 
-@app.route('/crew')
-def crew_view():
-    return render_template('crew.html')
-
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
