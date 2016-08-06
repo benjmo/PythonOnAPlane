@@ -3,31 +3,55 @@
 {% block head %}
 <!-- add header extensions here -->
 <link rel="stylesheet" href="{{url_for('static', filename='css/passenger.css')}}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
 {% endblock %}
 
 {% block body %}
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="brand-logo">Logo</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
+      <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
+      <li><a href="#" onclick="changeView('services')">Miscellaneous</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
+      <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
+      <li><a href="#" onclick="changeView('services')">Miscellaneous</a></li>
+      <li><a href="#">Help</a></li>
+    </ul>
+  </div>
+</nav>          
 
 <div id="main-menu">
   <h1><center>QHopper</center></h1>
 
 <div id="content" class="col-xs-12">
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('main-menu', 'drinks')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('drinks')">
     <i class="glyphicon glyphicon-glass"></i>
       Drink Menu
     </div>
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('main-menu', 'snacks')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('snacks')">
     <i class="glyphicon glyphicon-apple"></i>
       Snack Menu
     </div>
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('main-menu', 'services')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('services')">
 <i class="glyphicon glyphicon-user"></i>
       Other Services
     </div>
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('main-menu', 'services')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('services')">
       Swag
     </div>
 
