@@ -46,7 +46,6 @@ $.get("/get_products").done(function(data){
         thingByCat[curr['category']][thingByCat[curr['category']].length -1]['img'] =  curr['img_name'];
       }
     }
-
     // actually use the data
     for (cat in thingByCat) {
       $("#" + type).append($("<h3>").append(document.createTextNode(cat)));

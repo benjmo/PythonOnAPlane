@@ -20,13 +20,13 @@
     <ul class="right hide-on-med-and-down">
       <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
       <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
-      <li><a href="#" onclick="changeView('services')">Miscellaneous</a></li>
+      <li><a href="#" onclick="changeView('other')">Miscellaneous</a></li>
       <li><a href="#">Help</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
       <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
       <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
-      <li><a href="#" onclick="changeView('services')">Miscellaneous</a></li>
+      <li><a href="#" onclick="changeView('other')">Miscellaneous</a></li>
       <li><a href="#">Help</a></li>
     </ul>
   </div>
@@ -46,12 +46,12 @@
       Snack Menu
     </div>
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('services')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('other')">
 <i class="glyphicon glyphicon-user"></i>
       Other Services
     </div>
 
-    <div id="item" class="col-xs-12 card" onclick="changeView('services')">
+    <div id="item" class="col-xs-12 card" onclick="changeView('other')">
       Swag
     </div>
 
@@ -68,7 +68,7 @@
   <h1><center>Snack Menu</center></h1>
 </div>
 
-<div hidden id="services" class="submenu">
+<div hidden id="other" class="submenu">
   <h1><center>Other Services</center></h1>
 </div>
 {% endblock %}
