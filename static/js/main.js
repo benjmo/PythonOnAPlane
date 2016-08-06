@@ -4,10 +4,11 @@ var currDiv = "main-menu"; // init to menu
 var prevDiv = "main-menu"; // init to menu
 
 function changeView(sourceId, destId) {
-   $("sourceId").hide();
+   $("#" + sourceId).slideUp();
    prevDiv = sourceId;
-   $("destId").show();
+   $("#" + destId).show();
    currDiv = destId;
+   console.log("Changed from " + sourceId + " to " + destId);
 }
 
 $(window).on("navigate", function (event, data) {
