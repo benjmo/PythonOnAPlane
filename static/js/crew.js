@@ -11,8 +11,8 @@ function loadServices() {
   $.get("/get_orders")
     .done(function(data) {
       $("#orders").empty();
-      for (var order in data['orders']) {
-        var orderRow = createNewOrder(data['orders'][order]);
+      for (var order in data) {
+        var orderRow = createOrderTab(data[order]);
         $("#orders").append(orderRow);
       }
     })
@@ -21,13 +21,11 @@ function loadServices() {
     })
 }
 
-function createNewOrder(orderData) {
+function createOrderTab(orderData) {
   console.log(orderData);
-  var product = orderData['product'];
-  var customer = orderData['customer'];
   var order = $("<div>");
-  order.append("1 " + product['name'] + " for " + customer['name'] + 
-                " in seat " + customer['row_number'] + customer['seat_letter']);
+  order.append("1 " + orderData['product_name'] + " for " + orderData['customer_name'] + 
+                " in seat " + orderData['row_number'] + orderData['seat_letter']);
   order.attr('class', "row form-control");
   order.click(function(a, b) {
     $(this).toggleClass("inProgress");

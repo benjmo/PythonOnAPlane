@@ -1,4 +1,5 @@
 services = [
+    {
         'product_id': 1,
         'product_type' : 'drinks',
 		'customer_id': 0

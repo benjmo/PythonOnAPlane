@@ -19,8 +19,8 @@ def page_not_found(e):
 #customer name
 #row number
 #seat 
-@app.route('/get_services', methods=['GET'])
-def get_services():
+@app.route('/get_orders', methods=['GET'])
+def get_orders():
     ret = []
     for order in services:
         p_id = order['product_id']
