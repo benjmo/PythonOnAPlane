@@ -3,16 +3,22 @@ body {
 }
 
 h1 {
-    color: red;
+    color: #EB131A;
 }
 
 .card {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    background-color: red;
+    background-color: #EB131A;
     color: white;
     font-size: 200%;
     padding: 15px;
     text-align: center;
-    
+    margin: auto;
+    font-family: AkkuratPro;
+}
+
+@font-face {
+  font-family: AkkuratPro;
+  src: url(static/fonts/AkkuratPro-Regular.otf);
 }
