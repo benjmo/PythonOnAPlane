@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% block head %}
 <!-- add header extensions here -->
-<link rel="stylesheet" type="text/css" href="passenger.css">
+<link rel="stylesheet" href="{{url_for('static', filename='css/passenger.css')}}">
 {% endblock %}
 
 {% block body %}
