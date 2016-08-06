@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
     <script src="{{url_for('static', filename='js/vendor/modernizr-2.8.3.min.js')}}"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -25,9 +27,17 @@
       <h1><center>QHopper</center></h1>
 
       <div id="content">
-        <a class="form-control">Drinks</a>
-        <a class="form-control">Snacks</a>
-        <a class="form-control">Services</a>
+      
+        <div id="item" class="card">
+          Drink Menu<br>
+        </div><br>
+        <div id="item" class="card">
+          Snack Menu<br>
+        </div><br>
+        <div id="item" class="card">
+          Other Services<br>
+        </div>
+        
       </div>
     </div>
 
