@@ -42,14 +42,20 @@ h3 {
 
 
 .menuitem {
-    color: #EB131A;
+    color: #333333;
     background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    /*box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);*/
     transition: 0.3s;
     padding: 10px;
+    margin:10px;
+    margin-left:0px;
+    font-family: AkkuratPro;
+    border:2px solid #E1E1E1;
+    height:65px;
 }
 
-.menubutton {
+/*.menubutton {*/
+.button {
     float: right;
     color: white;
     background-color: #EB131A;
