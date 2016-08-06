@@ -23,6 +23,7 @@ def get_services():
 def get_products():
     return jsonify({'products': products})
 
+# params: customer-id
 @app.route('/get_customer', methods=['GET'])
 def get_customer():
     if 'customer-id' in request.args:
@@ -34,6 +35,7 @@ def get_customer():
     else:
         return jsonify({'error' : 'please give in integer variable customer-id'})
 
+# params: product-id
 @app.route('/get_product_by_id', methods=['GET'])
 def get_product_by_id():
     if 'product-id' in request.args:
@@ -45,8 +47,7 @@ def get_product_by_id():
     else:
         return jsonify({'error' : 'please give in integer variable product-id'})
 
-@app.route('/add_order', methods=['GET'])
-
+# params: product-id, customer-id
 @app.route('/add_order', methods=['GET'])
 def add_order():
     if 'product-id' in request.args and 'customer-id' in request.args:
