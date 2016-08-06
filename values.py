@@ -1,11 +1,13 @@
 services = [
     {
-        'product-id': 1234,
-		'customer-id': 0
+        'product_id': 1,
+        'product_type' : 'drinks',
+		'customer_id': 0
     },
     {
-        'product-id': 5827,
-		'customer-id': 1
+        'product_id': 0,
+        'product_type' : 'snacks',
+		'customer_id': 1
     }
 ]
 
@@ -22,7 +24,7 @@ customers = [
 	}
 ]
 
-products = [
+drinks = [
     {
         'name' : 'Coca-Cola',
         'description' : 'A refreshing drink to '
@@ -47,7 +49,7 @@ products = [
     {
         'name' : 'Apple Juice',
         'description' : 'Freshly juiced apples.',
-        'category' : 'Soft Drink'
+        'category' : 'Juices'
     },
     {
         'name' : 'English Breakfast',
@@ -78,7 +80,10 @@ products = [
         'name' : 'Rum and Coke',
         'description' : 'Nice drink.',
         'category' : 'Alcoholic Beverages'
-    },
+    }
+]
+
+snacks = [
     {
         'name' : 'Peanuts',
         'description' : 'Yummy nuts.',
@@ -88,7 +93,10 @@ products = [
         'name' : 'Chips',
         'description' : 'Potato Chips.',
         'category' : 'Snacks'
-    },
+    }
+]
+
+other = [
     {
         'name' : 'Blanket',
         'description' : 'Warm Blanket.',
