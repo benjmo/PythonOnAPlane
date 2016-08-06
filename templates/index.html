@@ -1,86 +1,58 @@
-<!doctype html>
-<html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Add your site or application content here -->
+{% extends "baseNoHeader.html" %}
+{% block body %}
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+<div id="main-menu">
+  <h1><center>QHopper</center></h1>
 
-    <link rel="stylesheet" href="{{url_for('static', filename='css/normalize.css')}}">
-    <link rel="stylesheet" href="{{url_for('static', filename='css/main.css')}}">
-    <script src="{{url_for('static', filename='js/vendor/modernizr-2.8.3.min.js')}}"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" type="text/css" href="index.css">
-  </head>
-  <body>
-    <!--[if lt IE 8]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <!-- Add your site or application content here -->
-    <div id="main-menu">
-      <h1><center>QHopper</center></h1>
-
-      <div id="content">
-      
-        <div id="item" class="card">
-          Drink Menu<br>
-        </div><br>
-        <div id="item" class="card">
-          Snack Menu<br>
-        </div><br>
-        <div id="item" class="card">
-          Other Services<br>
-        </div>
-        
-      </div>
-    </div>
-
-    <div hidden id="drinks">
-      <h1><center>Drink Menu</center></h1>
-
-      <h3>Soft Drink</h3>
-        Coke <button type="button">Request</button><br>
-        Sprite <button type="button">Request</button><br>
-        Fanta <button type="button">Request</button><br>
-      <h3>Juice</h3>
-        Apple Juice <button type="button">Request</button><br>
-        Orange Juice <button type="button">Request</button><br>
-      <h3>Tea and Coffee</h3>
-        English Breakfast <button type="button">Request</button><br>
-        Green Tea <button type="button">Request</button><br>
-        Coffee <button type="button">Request</button><br>
-      <h3>Alcoholic Beverages</h3>
-        Red Wine <button type="button">Request</button><br>
-        White Wine <button type="button">Request</button><br>
-        Beer <button type="button">Request</button><br>
-        
+  <div id="content">
+  
+    <div id="item" class="card">
+      Drink Menu<br>
+    </div><br>
+    <div id="item" class="card">
+      Snack Menu<br>
+    </div><br>
+    <div id="item" class="card">
+      Other Services<br>
     </div>
     
-    <div hidden id="snacks">
-      <h1><center>Snack Menu</center></h1>
-      Peanuts <button type="button">Request</button><br>
-      Chips <button type="button">Request</button><br>
-      
-    </div>
+  </div>
+</div>
+
+<div hidden id="drinks">
+  <h1><center>Drink Menu</center></h1>
+
+  <h3>Soft Drink</h3>
+    Coke <button type="button">Request</button><br>
+    Sprite <button type="button">Request</button><br>
+    Fanta <button type="button">Request</button><br>
+  <h3>Juice</h3>
+    Apple Juice <button type="button">Request</button><br>
+    Orange Juice <button type="button">Request</button><br>
+  <h3>Tea and Coffee</h3>
+    English Breakfast <button type="button">Request</button><br>
+    Green Tea <button type="button">Request</button><br>
+    Coffee <button type="button">Request</button><br>
+  <h3>Alcoholic Beverages</h3>
+    Red Wine <button type="button">Request</button><br>
+    White Wine <button type="button">Request</button><br>
+    Beer <button type="button">Request</button><br>
     
-    <div hidden id="services">
-      <h1><center>Other Services</center></h1>
-      Blanket <button type="button">Request</button><br>
-      Pillow <button type="button">Request</button><br>
-      Headphones <button type="button">Request</button><br>
-      
-    </div>
-    
-    <script src="{{url_for('static', filename='https://code.jquery.com/jquery-1.12.0.min.js')}}"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/static/js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-    <script src="{{url_for('static', filename='js/plugins.js')}}"></script>
-    <script src="{{url_for('static', filename='js/main.js')}}"></script>
-  </body>
-</html>
+</div>
+
+<div hidden id="snacks">
+  <h1><center>Snack Menu</center></h1>
+  Peanuts <button type="button">Request</button><br>
+  Chips <button type="button">Request</button><br>
+  
+</div>
+
+<div hidden id="services">
+  <h1><center>Other Services</center></h1>
+  Blanket <button type="button">Request</button><br>
+  Pillow <button type="button">Request</button><br>
+  Headphones <button type="button">Request</button><br>
+  
+</div>
+{% endblock %}
