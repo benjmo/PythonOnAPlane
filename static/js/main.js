@@ -7,7 +7,9 @@ $(".button-collapse").sideNav();
 // PAGE NAVIGATION
 
 function changeView(destId) {
-   if (currDiv != destId) {
+   if (destId == 'back') {
+      changeView(prevDiv);
+   } else if (currDiv != destId) {
       $("#" + currDiv).slideUp();
       prevDiv = currDiv;
       $("#" + destId).show();

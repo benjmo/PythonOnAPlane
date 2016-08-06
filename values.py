@@ -88,6 +88,12 @@ drinks = [
         'img_name' : 'english_breakfast.jpg'
     },
     {
+        'name' : 'Green Tea',
+        'description' : 'Relaxing Green Tea',
+        'category' : 'Coffee and Tea',
+        'img_name' : 'english_breakfast.jpg'
+    },
+    {
         'name' : 'Black Coffee',
         'description' : 'Strong coffee.',
         'category' : 'Coffee and Tea',
@@ -123,12 +129,20 @@ snacks = [
     {
         'name' : 'Peanuts',
         'description' : 'Yummy nuts.',
-        'category' : 'Snacks'
+        'category' : 'Snacks',
+        'img_name' : 'peanuts.jpg'
     },
     {
         'name' : 'Chips',
         'description' : 'Potato Chips.',
-        'category' : 'Snacks'
+        'category' : 'Snacks',
+        'img_name' : 'chips.jpg'
+    },
+    {
+        'name' : 'Apple',
+        'description' : 'Fresh apple.',
+        'category' : 'Snacks',
+        'img_name' : 'apple.jpg'
     }
 ]
 
@@ -136,11 +150,19 @@ other = [
     {
         'name' : 'Blanket',
         'description' : 'Warm Blanket.',
-        'category' : 'Amenities'
+        'category' : 'Amenities',
+        'img_name' : 'blanket.jpg'
+    },
+    {
+        'name' : 'Pillow',
+        'description' : 'Soft Pillow.',
+        'category' : 'Amenities',
+        'img_name' : 'pillow.jpg'
     },
     {
         'name' : 'Headphones',
         'description' : 'For your music.',
-        'category' : 'Amenities'
+        'category' : 'Amenities',
+        'img_name' : 'headphones.jpg'
     }
 ]

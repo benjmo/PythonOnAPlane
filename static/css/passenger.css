@@ -78,3 +78,8 @@ h3 {
     font-family: AkkuratPro;
     font-size: 18px;
 }
+
+nav i {
+    padding-right: 15px;
+    padding-left: 15px;
+}
