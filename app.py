@@ -5,7 +5,11 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def boilerplate():
-    return render_template('index.html')
+    return render_template('passenger.html')
+
+@app.route('/crew')
+def crew_view():
+    return render_template('crew.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
