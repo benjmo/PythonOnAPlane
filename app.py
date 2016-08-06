@@ -28,7 +28,11 @@ customers = [
 @app.route('/')
 @app.route('/index')
 def boilerplate():
-    return render_template('index.html')
+    return render_template('passenger.html')
+
+@app.route('/crew')
+def crew_view():
+    return render_template('crew.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
@@ -37,6 +41,17 @@ def page_not_found(e):
 @app.route('/get_services', methods=['GET'])
 def get_services():
     return jsonify({'services': services})
+
+@app.route('/get_customer', methods=['GET'])
+def get_customer():
+    if 'customer-id' in request.args:
+        c_id = request.args.get('customer-id')
+        try:
+            return jsonify({'customer': customers[int(c_id)]})
+        except IndexError:
+            return jsonify({'error' : 'customer id not exist'})
+    else:
+        return jsonify({'error' : 'please give in integer variable customer-id'})
 
 @app.route('/add_order', methods=['GET'])
 def add_order():
@@ -49,7 +64,8 @@ def add_order():
             })
         return jsonify({'response': 'ok'})
     else:
-        return jsonify({'response': 'some issue with input'})
+        return jsonify({'response': 'some issue with input. make sure include'
+                        + 'variables product-id and customer-id'})
 
 if __name__ == '__main__':
     app.run(debug=True)

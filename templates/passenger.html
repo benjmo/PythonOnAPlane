@@ -1,0 +1,63 @@
+<!-- Add your site or application content here -->
+{% extends "base.html" %}
+{% block head %}
+<!-- add header extensions here -->
+<link rel="stylesheet" type="text/css" href="passenger.css">
+{% endblock %}
+
+{% block body %}
+
+<div id="main-menu">
+  <h1><center>QHopper</center></h1>
+
+  <div id="content">
+  
+    <div id="item" class="card">
+      Drink Menu<br>
+    </div><br>
+    <div id="item" class="card">
+      Snack Menu<br>
+    </div><br>
+    <div id="item" class="card">
+      Other Services<br>
+    </div>
+    
+  </div>
+</div>
+
+<div hidden id="drinks">
+  <h1><center>Drink Menu</center></h1>
+
+  <h3>Soft Drink</h3>
+    Coke <button type="button">Request</button><br>
+    Sprite <button type="button">Request</button><br>
+    Fanta <button type="button">Request</button><br>
+  <h3>Juice</h3>
+    Apple Juice <button type="button">Request</button><br>
+    Orange Juice <button type="button">Request</button><br>
+  <h3>Tea and Coffee</h3>
+    English Breakfast <button type="button">Request</button><br>
+    Green Tea <button type="button">Request</button><br>
+    Coffee <button type="button">Request</button><br>
+  <h3>Alcoholic Beverages</h3>
+    Red Wine <button type="button">Request</button><br>
+    White Wine <button type="button">Request</button><br>
+    Beer <button type="button">Request</button><br>
+    
+</div>
+
+<div hidden id="snacks">
+  <h1><center>Snack Menu</center></h1>
+  Peanuts <button type="button">Request</button><br>
+  Chips <button type="button">Request</button><br>
+  
+</div>
+
+<div hidden id="services">
+  <h1><center>Other Services</center></h1>
+  Blanket <button type="button">Request</button><br>
+  Pillow <button type="button">Request</button><br>
+  Headphones <button type="button">Request</button><br>
+  
+</div>
+{% endblock %}
