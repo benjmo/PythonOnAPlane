@@ -23,19 +23,19 @@ def page_not_found(e):
 def get_services():
     ret = []
     for order in services:
-        p_id = order['product_id']
+        p_id = int(order['product_id'])
         p_type = order['product_type']
-        c_id = order['customer_id']
+        c_id = int(order['customer_id'])
         if p_type == 'drinks':
-            p_name = drinks[p_id]
+            p_name = drinks[p_id]['name']
         elif p_type == 'snacks':
-            p_name = snacks[p_id]
+            p_name = snacks[p_id]['name']
         elif p_type == 'other':
-            p_name = other[p_id]
+            p_name = other[p_id]['name']
         ret.append({'customer_name' : customers[c_id]['name'],
                     'row_number' : customers[c_id]['row_number'],
                     'seat_letter' : customers[c_id]['seat_letter'],
-                    'product_name' : p_type
+                    'product_name' : p_name
         })
     return jsonify(ret)
 
@@ -103,13 +103,37 @@ def add_order():
         p_type = request.args.get('product-type')
         if p_type == 'drinks' or p_type == 'snacks' or p_type == 'other':
             services.append({
-                'product-id' : p_id,
-                'product-type' : p_type,
-                'customer-id' : u_id
+                'product_id' : p_id,
+                'product_type' : p_type,
+                'customer_id' : u_id
             })
             return jsonify({'response': 'order added'})
         else:
             return jsonify({'response' : 'use a valid product type'})
+    else:
+        return jsonify({'response': 'some issue with input. make sure include'
+                        + 'variables product-id and customer-id'})
+
+# params: product-id, customer-id
+#         product-type [drinks/snacks/other]
+@app.route('/remove_order', methods=['GET'])
+def remove_order():
+    if 'product-id' in request.args and 'customer-id' in request.args and 'product-type' in request.args:
+        p_id = request.args.get('product-id')
+        u_id = request.args.get('customer-id')
+        p_type = request.args.get('product-type')
+        index = -1
+        for order in services:
+            if order['product_id'] == p_id and order['product_type'] == p_type and order['customer_id'] == u_id:
+                index = services.index(order)
+                break
+        if index != -1:
+            print services, index
+            print services.pop(index)
+            print services, index
+            return jsonify({'response': 'order removed'})
+        else:
+            return jsonify({'response' : 'FAILURE order not removed'})
     else:
         return jsonify({'response': 'some issue with input. make sure include'
                         + 'variables product-id and customer-id'})
