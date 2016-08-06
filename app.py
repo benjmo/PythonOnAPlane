@@ -44,7 +44,7 @@ def get_orders():
 
 @app.route('/get_products', methods=['GET'])
 def get_products():
-    return jsonify(drinks+snacks+other)
+    return jsonify({'drinks' : drinks, 'snacks' : snacks, 'other' : other})
 
 # params: customer-id
 @app.route('/get_customer', methods=['GET'])
