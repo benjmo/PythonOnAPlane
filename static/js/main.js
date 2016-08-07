@@ -14,7 +14,7 @@ $("#loginButton").click(function() {
       alert("Passenger not found. Check your name again");
     } else {
       CURRENT_CUSTOMER = parseInt(a['id'])
-      $("#menuTitle").empty().append(document.createTextNode("Hello " + $("#loginName")[0].value) + "!")
+      $("#menuTitle").empty().append(document.createTextNode("Hello " + $("#loginName")[0].value + "!"))
       changeView("main-menu")
     }
   })
