@@ -1,6 +1,7 @@
 var currentOrders;
 
-loadServices();
+loadServices()
+setInterval(loadServices, 20000);
 
 $("#removeButton").click(function() {
   $(".inProgress").each(function() {
@@ -16,6 +17,7 @@ $("#removeButton").click(function() {
 });
 
 function loadServices() {
+  console.log("Loading orders...");
   $.get("/get_orders")
     .done(function(data) {
       currentOrders = data;
@@ -31,7 +33,6 @@ function loadServices() {
 }
 
 function createOrderTab(orderData) {
-  console.log(orderData);
   var order = $("<div>");
   order.append("1 " + orderData['product_name'] + " for " + orderData['customer_name'] + 
                 " in seat " + orderData['row_number'] + orderData['seat_letter']);
