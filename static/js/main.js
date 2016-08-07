@@ -6,10 +6,19 @@ var CURRENT_CUSTOMER = 0;
 $(".button-collapse").sideNav();
 
 // PAGE NAVIGATION
-/*$("#loginModal").modal(show);
+$("#loginModal").modal('show');
 $("#loginButton").click(function() {
-  $.get("/")
-})*/
+  $.get("/get_customer_id_from_name", {
+    'name' : $("#loginName")[0].value
+  }).always(function(a) {
+    if (a.error) {
+      alert("Passenger not found. Check your name again");
+    } else {
+      CURRENT_CUSTOMER = parseInt(a['id'])
+      $("#loginModal").modal('hide')
+    }
+  })
+})
 
 function changeView(destId) {
    if (destId == 'back') {
