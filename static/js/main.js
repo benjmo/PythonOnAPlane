@@ -1,10 +1,15 @@
 var currDiv = "main-menu"; // init to menu
 var prevDiv = "main-menu"; // init to menu
+var CURRENT_CUSTOMER = 0;
 
 
 $(".button-collapse").sideNav();
 
 // PAGE NAVIGATION
+/*$("#loginModal").modal(show);
+$("#loginButton").click(function() {
+  $.get("/")
+})*/
 
 function changeView(destId) {
    if (destId == 'back') {
@@ -29,7 +34,17 @@ $(window).on("navigate", function (event, data) {
   }
 });
 
-// other function
+$("#orderConfirm").click(function(){
+  console.log("going!", $(this).attr('p_id'), $(this).attr('type'));
+  $.get("/add_order", {
+    'product-id' : $(this).attr('p_id'),
+    'customer-id' : CURRENT_CUSTOMER,
+    'product-type' : $(this).attr('type')
+  })
+  $("#orderModal").modal('hide');
+});
+
+// load all the info at the start
 $.get("/get_products").done(function(data){
   for (type in data) {
     // parse into useful format
@@ -69,14 +84,8 @@ $.get("/get_products").done(function(data){
         item.append(document.createTextNode(thingByCat[cat][indiv]['name']));
         var button = $("<button>").attr('type', "button");
         button.addClass("button").append(document.createTextNode("Order"));
-        button.attr('type', type).attr('p_id', thingByCat[cat][indiv]['p_id']);
-        button.click(function() {
-          $.get("/add_order", {
-            'product-id' : $(this).attr('p_id'),
-            'customer-id' : 0,
-            'product-type' : $(this).attr('type')
-          })
-        })
+        button.attr('p_id', thingByCat[cat][indiv]['p_id']).attr('type', type).attr('name', thingByCat[cat][indiv]['name']);
+        button.click(orderItem);
         item.append(button);
         category.append(item)
       }
@@ -86,3 +95,15 @@ $.get("/get_products").done(function(data){
     }
   }
 });
+
+function orderItem(a) {
+  var thisPr = $(this);
+  console.log(this);
+  $("#orderModalBody").empty().append(document.createTextNode("Order 1 " + thisPr.attr('name') + "?")).append($("<p>"));
+  $.get("/get_orders").done(function(a) {
+    $("#orderModalBody").append(document.createTextNode("May take approximately " + (a.length * 0.5) + " minute(s)."));
+  })
+  $("#orderConfirm").attr('p_id', thisPr.attr('p_id'));
+  $("#orderConfirm").attr('type', thisPr.attr('type'));
+  $("#orderModal").modal('show');
+}

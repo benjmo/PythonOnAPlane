@@ -58,6 +58,11 @@ def get_customer():
     else:
         return jsonify({'error' : 'please give in integer variable customer-id'})
 
+@app.route('/get_customer_by_name', methods=['GET'])
+def get_customer_by_name():
+    if 'name' in request.args:
+        name = request.args.get('customer-id')
+
 # params: product-type - [drinks/snacks/other]
 #         product-id integer
 @app.route('/get_product_by_id', methods=['GET'])

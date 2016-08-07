@@ -72,4 +72,37 @@
 <div hidden id="other" class="submenu">
   <h1><center>Other Services</center></h1>
 </div>
+
+<div class="modal fade" id="orderModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Order Item</h4>
+      </div>
+      <div class="modal-body" id="orderModalBody">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" id="orderConfirm">Order</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<div class="modal fade" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Enter name</h4>
+      </div>
+      <div class="modal-body" id="orderModalBody">
+        <input type="text" class="form-control" id="loginName" placeholder="Enter name">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="loginButton">Log in</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 {% endblock %}
