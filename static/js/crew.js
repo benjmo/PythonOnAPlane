@@ -1,7 +1,7 @@
 var currentOrders;
 
 loadServices()
-setInterval(loadServices, 20000);
+setInterval(loadServices, 10000);
 
 $("#removeButton").click(function() {
   $(".inProgress").each(function() {
@@ -18,6 +18,8 @@ $("#removeButton").click(function() {
 
 function loadServices() {
   console.log("Loading orders...");
+  if ($(".inProgress").length > 0)
+    return;
   $.get("/get_orders")
     .done(function(data) {
       currentOrders = data;

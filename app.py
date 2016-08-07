@@ -63,7 +63,7 @@ def get_customer_id_name():
     if 'name' in request.args:
         name = request.args.get('name')
         for c in range(len(customers)):
-            if (customers[c]['name'] == name):
+            if (customers[c]['name'].lower() == name.lower()):
                 return jsonify({'id' : c});
         return jsonify({'error': 'no such customer'})
     return jsonify({'error': 'please give a name'})
