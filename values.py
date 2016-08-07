@@ -91,7 +91,7 @@ drinks = [
         'name' : 'Green Tea',
         'description' : 'Relaxing Green Tea',
         'category' : 'Coffee and Tea',
-        'img_name' : 'english_breakfast.jpg'
+        'img_name' : 'green_tea.jpg'
     },
     {
         'name' : 'Black Coffee',
