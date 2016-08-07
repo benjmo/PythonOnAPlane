@@ -116,9 +116,9 @@ def add_order():
         p_type = request.args.get('product-type')
         if p_type == 'drinks' or p_type == 'snacks' or p_type == 'other':
             services.append({
-                'product_id' : p_id,
+                'product_id' : int(p_id),
                 'product_type' : p_type,
-                'customer_id' : u_id
+                'customer_id' : int(u_id)
             })
             return jsonify({'response': 'order added'})
         else:
