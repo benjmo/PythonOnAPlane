@@ -19,12 +19,14 @@
     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <a href="#" onclick="changeView('back')" data-activates="mobile-demo" class="pull-right"><i class="material-icons">keyboard_backspace</i></a>
     <ul class="right hide-on-med-and-down">
+      <li><a href="#" onclick="changeView('main-menu')">Menu</a></li>
       <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
       <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
       <li><a href="#" onclick="changeView('other')">Miscellaneous</a></li>
       <li><a href="#">Help</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
+      <li><a href="#" onclick="changeView('main-menu')">Menu</a></li>
       <li><a href="#" onclick="changeView('drinks')">Drinks</a></li>
       <li><a href="#" onclick="changeView('snacks')">Snacks</a></li>
       <li><a href="#" onclick="changeView('other')">Miscellaneous</a></li>
@@ -36,7 +38,7 @@
 <div id="main-menu">
 
 <div id="content" class="col-xs-12">
-
+    <center><h2 style="color:#EE0000">QHopper</h2></center>
     <div id="item" class="col-xs-12 card" onclick="changeView('drinks')">
     <i class="glyphicon glyphicon-glass" style="color:#EE0000"></i>
       Drink Menu
