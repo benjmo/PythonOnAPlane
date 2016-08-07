@@ -8,6 +8,11 @@ services = [
         'product_id': 0,
         'product_type' : 'snacks',
 		'customer_id': 1
+    },
+    {
+        'product_id': 0,
+        'product_type' : 'other',
+        'customer_id': 3        
     }
 ]
 
@@ -28,7 +33,7 @@ customers = [
 		'seat_letter' : 'e'
 	},
 	{
-		'name' : 'John',
+		'name' : 'Cold',
 		'row_number': 8,
 		'seat_letter' : 'a'
 	},
