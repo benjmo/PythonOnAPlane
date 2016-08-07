@@ -7,7 +7,9 @@ $(".button-collapse").sideNav();
 // PAGE NAVIGATION
 
 function changeView(destId) {
-   if (currDiv != destId) {
+   if (destId == 'back') {
+      changeView(prevDiv);
+   } else if (currDiv != destId) {
       $("#" + currDiv).slideUp();
       prevDiv = currDiv;
       $("#" + destId).show();
@@ -46,20 +48,27 @@ $.get("/get_products").done(function(data){
         thingByCat[curr['category']][thingByCat[curr['category']].length -1]['img'] =  curr['img_name'];
       }
     }
-    // actually use the data
+    
+    var category = $("<div>").addClass("col-xs-12"); 
+
+    //for each category
     for (cat in thingByCat) {
-      $("#" + type).append($("<h3>").append(document.createTextNode(cat)));
+      category.append($("<h3>").append(document.createTextNode(cat)));
+      
+      //...
+
+
       for (indiv in thingByCat[cat]) {
         var item = $("<div>").addClass("menuitem");
         if ('img' in thingByCat[cat][indiv]) {
           var img = $("<img>").attr('src', baseStaticURL + thingByCat[cat][indiv]['img']);
           img.attr('alt', thingByCat[cat][indiv]['name']);
-          img.attr('style',"width:10%;height:auto;");
+          img.attr('style',"margin-right:10px;width:10%;height:auto;");
           item.append(img);
         }
         item.append(document.createTextNode(thingByCat[cat][indiv]['name']));
         var button = $("<button>").attr('type', "button");
-        button.addClass("menubutton").append(document.createTextNode("Order"));
+        button.addClass("button").append(document.createTextNode("Order"));
         button.attr('type', type).attr('p_id', thingByCat[cat][indiv]['p_id']);
         button.click(function() {
           $.get("/add_order", {
@@ -69,8 +78,11 @@ $.get("/get_products").done(function(data){
           })
         })
         item.append(button);
-        $("#" + type).append(item)
+        category.append(item)
       }
+
+      //....
+      $("#" + type).append(category);
     }
   }
 });
