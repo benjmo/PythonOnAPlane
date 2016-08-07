@@ -1,12 +1,11 @@
-var currDiv = "main-menu"; // init to menu
-var prevDiv = "main-menu"; // init to menu
+var currDiv = "login"; // init to menu
+var prevDiv = "login"; // init to menu
 var CURRENT_CUSTOMER = 0;
 
 
 $(".button-collapse").sideNav();
 
 // PAGE NAVIGATION
-$("#loginModal").modal('show');
 $("#loginButton").click(function() {
   $.get("/get_customer_id_from_name", {
     'name' : $("#loginName")[0].value
@@ -15,7 +14,8 @@ $("#loginButton").click(function() {
       alert("Passenger not found. Check your name again");
     } else {
       CURRENT_CUSTOMER = parseInt(a['id'])
-      $("#loginModal").modal('hide')
+      $("#menuTitle").empty().append(document.createTextNode("Hello " + $("#loginName")[0].value) + "!")
+      changeView("main-menu")
     }
   })
 })

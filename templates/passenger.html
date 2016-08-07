@@ -35,10 +35,10 @@
   </div>
 </nav>          
 
-<div id="main-menu">
+<div hidden id="main-menu">
 
 <div id="content" class="col-xs-12">
-    <center><h2 style="color:#EE0000">QHopper</h2></center>
+    <center><h2 style="color:#EE0000" id="menuTitle">QHopper</h2></center>
     <div id="item" class="col-xs-12 card" onclick="changeView('drinks')">
     <i class="glyphicon glyphicon-glass" style="color:#EE0000"></i>
       Drink Menu
@@ -92,19 +92,9 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<div class="modal fade" id="loginModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Enter name</h4>
-      </div>
-      <div class="modal-body" id="orderModalBody">
-        <input type="text" class="form-control" id="loginName" placeholder="Enter name">
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" id="loginButton">Log in</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+<div id="login" class="container">
+  <h1>Enter Name</h1>
+  <input type="text" class="form-control" id="loginName" placeholder="Enter name">
+  <button type="button" class="btn btn-default" id="loginButton">Log in</button>
+</div>
 {% endblock %}
